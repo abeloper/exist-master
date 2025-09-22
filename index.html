@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exit Exam Flashcards</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+           <h1>
+                        <span>🎓</span>
+                        <span>Exit Master</span>
+                    </h1>
+
+            <p class="subtitle">Prepare for your graduation exams with targeted practice</p>
+        </header>
+        
+        <!-- Registration Page -->
+        <div class="page active" id="registration-page">
+            <h2 class="section-title">Student Registration</h2>
+            <form id="registration-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="id">Student ID</label>
+                        <input type="text" id="id" placeholder="Enter your student ID" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="university">University</label>
+                        <input type="text" id="university" placeholder="Enter your university" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="department">Department</label>
+                        <select id="department" required>
+                            <option value="">Select your department</option>
+                            <option value="Computer Science">Computer Science</option>
+                            <option value="Software Engineering">Software Engineering</option>
+                            <option value="Information Technology">Information Technology</option>
+                            <option value="Computer Engineering">Computer Engineering</option>
+                            <option value="Data Science">Data Science</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-register">Register & Start Quiz</button>
+            </form>
+
+            <div class="motivation-section">
+                <p class="motivation-text">"The beautiful thing about learning is that no one can take it away from you."</p>
+                <p class="motivation-author">- B.B. King</p>
+            </div>
+        </div>
+        
+        <!-- Quiz Page -->
+        <div class="page" id="quiz-page">
+            <h2 class="section-title">Exit Exam Training</h2>
+            
+            <div class="timer-container" id="timer">Time: 00:00</div>
+            
+            <div class="progress">
+                Question <span id="current-card">1</span> of <span id="total-cards">10</span>
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            
+            <div class="flashcard-container">
+                <div class="flashcard" id="flashcard">
+                    <div class="card-front">
+                        <div class="question" id="question">What is the time complexity of QuickSort in the average case?</div>
+                        <div class="course-tag" id="course-tag">Algorithms</div>
+                        <div class="card-number" id="card-number">1/10</div>
+                    </div>
+                    <div class="card-back">
+                        <div class="answer" id="answer">O(n log n) - QuickSort has an average case time complexity of O(n log n), making it efficient for large datasets.</div>
+                        <div class="course-tag" id="answer-course-tag">Algorithms</div>
+                        <div class="card-number" id="answer-card-number">1/10</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quiz-options" id="quiz-options">
+                <!-- Options will be populated by JavaScript -->
+            </div>
+            
+            <div class="controls">
+                <button class="btn" id="prev-btn">
+                    <i class="fas fa-arrow-left"></i> Previous
+                </button>
+                <button class="btn btn-show-answer" id="show-answer-btn">
+                    <i class="fas fa-eye"></i> Show Answer
+                </button>
+                <button class="btn btn-submit" id="submit-quiz-btn">
+                    Submit Quiz <i class="fas fa-paper-plane"></i>
+                </button>
+                <button class="btn" id="next-btn">
+                    Next <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="footer-controls">
+                <div class="timer-container" id="bottom-timer">Time: 00:00</div>
+                <button class="btn btn-logout" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+
+            <div class="motivation-section">
+                <p class="motivation-text">Mistakes are proof that you are trying.</p>
+          
+            </div>
+        </div>
+        
+        <!-- Results Page -->
+        <div class="page" id="results-page">
+            <h2 class="section-title">Quiz Results</h2>
+            
+            <div class="result-container">
+                <h3>Congratulations, <span id="result-name">Student</span>!</h3>
+                <p>You have completed the Exit Exam Training. practice More.</p>
+                
+                <div class="score" id="final-score">0%</div>
+                
+                <div class="result-details">
+                    <div class="result-card">
+                        <h4>Correct Answers</h4>
+                        <div class="result-value" id="correct-answers">0/0</div>
+                        <p>Your correct responses</p>
+                    </div>
+                    
+                    <div class="result-card">
+                        <h4>Performance</h4>
+                        <div class="result-value" id="performance">Needs Work</div>
+                        <p>Based on your score</p>
+                    </div>
+                    
+                    <div class="result-card">
+                        <h4>Time Spent</h4>
+                        <div class="result-value" id="time-spent">0m 0s</div>
+                        <p>Total quiz duration</p>
+                    </div>
+                    
+                    <div class="result-card">
+                        <h4>Future Tech Innovators</h4>
+                        <div class="result-value" id="future-engineers">🧑‍💻</div>
+                        <p>Students preparing for success</p>
+                    </div>
+                </div>
+
+                <div class="add-question-form">
+                    <h3>Add Your Own Question</h3>
+                    <form id="add-question-form">
+                        <div class="form-group">
+                            <label for="new-question">Question</label>
+                            <textarea id="new-question" required placeholder="Enter your question"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="option1">Option 1</label>
+                            <input type="text" id="option1" required placeholder="Enter option 1">
+                        </div>
+                        <div class="form-group">
+                            <label for="option2">Option 2</label>
+                            <input type="text" id="option2" required placeholder="Enter option 2">
+                        </div>
+                        <div class="form-group">
+                            <label for="option3">Option 3</label>
+                            <input type="text" id="option3" required placeholder="Enter option 3">
+                        </div>
+                        <div class="form-group">
+                            <label for="option4">Option 4</label>
+                            <input type="text" id="option4" required placeholder="Enter option 4">
+                        </div>
+                        <div class="form-group">
+                            <label for="correct-option">Correct Option</label>
+                            <select id="correct-option" required>
+                                <option value="">Select correct option</option>
+                                <option value="0">Option 1</option>
+                                <option value="1">Option 2</option>
+                                <option value="2">Option 3</option>
+                                <option value="3">Option 4</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="explanation">Explanation</label>
+                            <textarea id="explanation" required placeholder="Enter explanation for the answer"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="question-course">Course</label>
+                            <select id="question-course" required>
+                                <option value="">Select course</option>
+                                <option value="Algorithms">Algorithms</option>
+                                <option value="Java Programming">Java Programming</option>
+                                <option value="Database Systems">Database Systems</option>
+                                <option value="Data Science">Data Science</option>
+                                <option value="Data Structures">Data Structures</option>
+                                <option value="Web Technologies">Web Technologies</option>
+                                <option value="Software Engineering">Software Engineering</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-add-question">
+                            <i class="fas fa-plus"></i> Add Question
+                        </button>
+                    </form>
+                </div>
+
+                <div class="motivation-section">
+                    <p class="motivation-text">"Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking."</p>
+                    <p class="motivation-author">- Steve Jobs</p>
+                </div>
+                
+                <button class="btn btn-start" id="restart-btn">
+                    <i class="fas fa-redo"></i> Take Quiz Again
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification" id="notification">Question added successfully!</div>
+<footer>
+      <div class="footer-content">
+        <div class="social-icons">
+          <a href="https://github.com/abeloper"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/abeloper-abeje-goshu?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3B8YYkEU0USbaFiiJNnJnk2g%3D%3D"><i class="fab fa-linkedin"></i></a>
+          <a href="http://www.youtube.com/@abeloper"><i class="fab fa-youtube"></i></a>
+          <a href="https://t.me/abeloper"><i class="fab fa-telegram"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>@abeloper 2025</p>
+      </div>
+    </footer>
+</body>
+</html>
