@@ -35,18 +35,18 @@ A comprehensive, interactive web application designed to help Softwre Engineerin
 
 Check out the live application: [ExistMaster Live Demo](https://abeloper.github.io/ExistMaster/)
 
-🛠️ Technology Stack
+## 🛠️ Technology Stack
 Frontend: HTML5, CSS3, JavaScript (ES6+)
 
-Icons: Font Awesome 6.4.0
+**Icons**: Font Awesome 6.4.0
 
-Storage: Browser LocalStorage API
+**Storage:** Browser LocalStorage API
 
-Styling: Custom CSS with CSS Variables
+**Styling:** Custom CSS with CSS Variables
 
-Compatibility: All modern browsers
+**Compatibility:** All modern browsers
 
-📖 Usage Guide
+## 📖 Usage Guide
 Getting Started
 Register your student profile to begin tracking progress
 
@@ -67,7 +67,7 @@ Provide detailed explanations to help fellow students
 
 Review existing questions for accuracy
 
-🎯 Subject Coverage
+## 🎯 Subject Coverage
 ExistMaster covers all essential Computer Science and IT topics:
 
 Algorithms & Data Structures - Sorting, searching, complexity analysis
@@ -83,20 +83,20 @@ Web Technologies - HTTP, frontend and backend concepts
 Software Engineering - Development methodologies, testing, design patterns
 
 
-📞 Contact
+## 📞 Contact
 Abeloper Abeje Goshu - @abeloper
 
-🌐 GitHub: https://github.com/abeloper
+**🌐 GitHub:** https://github.com/abeloper
 
-💼 LinkedIn: Abeloper Abeje Goshu
+**💼 LinkedIn:** Abeloper Abeje Goshu
 
-📺 YouTube: @abeloper
+**📺 YouTube:** @abeloper
 
-📱 Telegram: @abeloper
+**📱 Telegram:** @abeloper
 
 Project Link: https://github.com/abeloper/ExistMaster
 
-🙏 Acknowledgments
+## 🙏 Acknowledgments
 Tech educators who provided guidance on exam content
 
 Students who tested early versions and provided valuable feedback
@@ -105,7 +105,7 @@ Font Awesome for the comprehensive icon set
 
 The open-source community for inspiration and best practices
 
-🚀 Future Enhancements
+## 🚀 Future Enhancements
 User authentication system
 
 Progress synchronization across devices
